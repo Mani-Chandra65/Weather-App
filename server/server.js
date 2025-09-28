@@ -13,7 +13,23 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 app.use(morgan('combined'));
-app.use(cors());
+
+// CORS configuration for Netlify + Render setup
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001', 
+    'http://localhost:5173',
+    'https://*.netlify.app',
+    'https://*.netlify.com',
+    /netlify\.app$/,
+    /netlify\.com$/
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // API Routes
@@ -298,20 +314,14 @@ app.post('/api/weather/compare', async (req, res) => {
   }
 });
 
-// Serve static files in production
-if (process.env.NODE_ENV === 'production') {
-  // Serve static files from client build directory
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-  
-  // Handle React Router - serve index.html for all non-API routes
-  app.get('*', (req, res) => {
-    // Skip API routes
-    if (req.originalUrl.startsWith('/api')) {
-      return res.status(404).json({ error: 'API endpoint not found' });
-    }
-    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+// API 404 handler for unmatched API routes
+app.use('/api/*', (req, res) => {
+  res.status(404).json({ 
+    error: 'API endpoint not found',
+    path: req.originalUrl,
+    message: 'This API endpoint does not exist'
   });
-}
+});
 
 const PORT = process.env.PORT || 5000;
 
