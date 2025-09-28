@@ -172,7 +172,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Y Mani Chandra Reddy**
 - Portfolio: [manichandrareddy.netlify.app](https://manichandrareddy.netlify.app/)
 - LinkedIn: [Y Mani Chandra Reddy](https://www.linkedin.com/in/y-mani-chandra-reddy)
-- Email: Contact via LinkedIn or Portfolio
+- Email: manichandra842@gmail.com
 
 ## 🙏 Acknowledgments
 
