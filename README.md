@@ -42,8 +42,8 @@
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/skyscope-pro.git
-cd skyscope-pro
+git clone https://github.com/Mani-Chandra65/Weather-App.git
+cd Weather-App
 
 # Install dependencies
 npm install
