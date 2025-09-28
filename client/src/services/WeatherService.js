@@ -1,7 +1,14 @@
 import axios from 'axios';
 
-// Use environment variable for API URL, fallback to proxy path for Netlify
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+// Always use proxy path for Netlify deployment, environment variable only for local development
+const API_BASE_URL = process.env.NODE_ENV === 'development' && import.meta.env.VITE_API_URL 
+  ? import.meta.env.VITE_API_URL 
+  : '/api';
+
+// Debug logging
+console.log('🔗 API Base URL:', API_BASE_URL);
+console.log('🌍 Environment:', import.meta.env.MODE);
+console.log('🔧 VITE_API_URL:', import.meta.env.VITE_API_URL);
 
 class WeatherService {
   async getCurrentWeatherByCity(city) {

@@ -1,7 +1,11 @@
 # Netlify Redirects for SkyScope Pro
 
-# Proxy API calls to Render backend (Update this URL after deploying to Render)
-/api/*  https://skyscope-pro-backend.onrender.com/api/:splat  200
+# Proxy API calls to Render backend - specific endpoints
+/api/weather/*  https://weather-app-1m99.onrender.com/api/weather/:splat  200
+/api/health     https://weather-app-1m99.onrender.com/api/health  200
+
+# Catch all other API routes
+/api/*  https://weather-app-1m99.onrender.com/api/:splat  200
 
 # Handle client-side routing (React Router) - must be last
 /*    /index.html   200
