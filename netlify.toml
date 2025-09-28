@@ -1,0 +1,31 @@
+# Netlify deployment configuration for SkyScope Pro Client
+
+[build]
+  publish = "client/dist"
+  command = "cd client && npm install && npm run build"
+  base = "/"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Performance optimizations
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    cache-control = "max-age=31536000"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    cache-control = "max-age=31536000"
+    
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    cache-control = "max-age=31536000"
