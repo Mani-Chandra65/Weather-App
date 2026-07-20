@@ -1,197 +1,179 @@
-# 🌌 SkyScope Pro - Weather Intelligence Platform
+# SkyScope Pro - Weather Analytics Platform
 
-<div align="center">
-  <h3>Advanced Weather Intelligence & Analytics Platform</h3>
-  <p>Built with React, Node.js, Express & OpenWeatherMap API</p>
-  
-  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-  ![React](https://img.shields.io/badge/react-18.2.0-blue.svg)
-  ![Node.js](https://img.shields.io/badge/node.js-16.0+-green.svg)
-  ![Express](https://img.shields.io/badge/express-4.18.2-lightgrey.svg)
-</div>
+SkyScope Pro is a full-stack web application that provides real-time weather details, multi-city comparisons, and forecast analytics. The platform features a modern user interface and a secure backend service that handles weather API integrations.
 
-## 🚀 Features
+## Core Features
 
-### ✨ **Advanced Weather Intelligence**
-- **Real-time Weather Data** - Current conditions, temperature, humidity, pressure
-- **5-Day Detailed Forecast** - Hourly predictions with comprehensive metrics
-- **Air Quality Monitoring** - AQI with PM2.5, PM10, CO, NO2, O3 components
-- **Multi-City Comparison** - Compare up to 5 cities simultaneously
-- **GPS Location Detection** - Automatic location-based weather
+- **Real-Time Weather Metrics**: Displays temperature, humidity, atmospheric pressure, wind details, and visibility.
+- **Five-Day Forecast**: Shows hourly weather predictions and atmospheric changes over five days.
+- **Air Quality Monitoring**: Measures the Air Quality Index (AQI) along with pollutant levels (PM2.5, PM10, CO, NO2, O3).
+- **Multi-City Comparison**: Allows users to select and compare weather metrics for up to five different cities at the same time.
+- **Location Detection**: Uses the device GPS to fetch local weather details automatically.
+- **Dynamic Layout Theme**: Switches automatically between day and night modes based on the local time, with manual control.
+- **Data Visualizations**: Offers interactive charts for temperature, humidity, and pressure trends.
+- **Demo Mode**: Includes simulated fallback data if the API service is unavailable or if the API key is missing.
 
-### 🎨 **Futuristic UI/UX**
-- **Glassmorphism Design** - Modern glass-like transparent effects
-- **Auto Theme Switching** - Day mode (6AM-6PM) & Night mode (6PM-6AM)
-- **Interactive Charts** - Temperature, humidity, pressure trends
-- **Responsive Design** - Optimized for mobile, tablet, desktop
-- **Smooth Animations** - CSS transitions and hover effects
-
-### 🤖 **Smart Features**
-- **Intelligent Notifications** - Real-time feedback and theme changes
-- **Error Handling** - Graceful fallbacks with demo mode
-- **Data Persistence** - Theme and preferences saved locally
-- **Professional Analytics** - Comprehensive weather insights
-
-## 🛠️ Quick Start
-
-### Prerequisites
-- Node.js 16+
-- npm or yarn
-- OpenWeatherMap API key (free at [openweathermap.org](https://openweathermap.org/api))
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/Mani-Chandra65/Weather-App.git
-cd Weather-App
-
-# Install dependencies
-npm install
-cd client && npm install && cd ..
-
-# Environment setup
-echo "WEATHER_API_KEY=your_api_key_here" > .env
-```
-
-### Development
-```bash
-# Start both server and client
-npm run dev
-
-# Or start individually
-npm run server  # Backend on http://localhost:5000
-npm run client  # Frontend on http://localhost:3000
-```
-
-### Production Build
-```bash
-npm run build
-npm start
-```
-
-## ⚙️ Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-NODE_ENV=development
-PORT=5000
-WEATHER_API_KEY=your_openweathermap_api_key_here
-```
-
-## 📚 API Endpoints
-
-### Weather Data
-- `GET /api/weather/current/:city` - Current weather by city
-- `GET /api/weather/coordinates/:lat/:lon` - Current weather by coordinates
-- `GET /api/weather/forecast/:city` - 5-day forecast by city
-- `GET /api/weather/forecast/coordinates/:lat/:lon` - 5-day forecast by coordinates
-- `GET /api/weather/air-quality/:lat/:lon` - Air quality data
-
-### Location Services
-- `GET /api/geo/direct/:city` - Get coordinates from city name
-- `GET /api/geo/reverse/:lat/:lon` - Get city from coordinates
-- `POST /api/weather/compare` - Compare multiple cities
-
-## 🎯 Key Features
-
-### Auto Theme Switching
-- **Light Mode**: 6:00 AM - 6:00 PM
-- **Dark Mode**: 6:00 PM - 6:00 AM
-- **Manual Override**: Full control available
-- **Smart Notifications**: Theme change alerts
-
-### Weather Analytics
-- **Current Conditions**: Temperature, humidity, pressure, wind
-- **Forecast Analysis**: 5-day predictions with hourly data
-- **Air Quality**: Comprehensive pollution monitoring
-- **Visual Charts**: Interactive data visualizations
-
-## 🏗️ Tech Stack
+## Tech Stack
 
 ### Frontend
-- **React 18** - Modern UI framework
-- **Vite** - Fast build tool and dev server
-- **CSS3** - Glassmorphism design system
-- **Recharts** - Interactive data visualizations
-- **Lucide React** - Beautiful icon library
-- **React Router** - Navigation
-- **React Hot Toast** - Notifications
+- **React 18**: User interface library.
+- **Vite**: Build tool and local development server.
+- **CSS**: Glassmorphism-style design with responsive layout support.
+- **Recharts**: Data visualization library for interactive weather charts.
+- **Lucide React**: Vector icons library.
+- **React Router**: Client-side routing.
+- **React Hot Toast**: User notifications.
 
 ### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web framework
-- **Axios** - HTTP client
-- **CORS** - Cross-origin resource sharing
-- **Helmet** - Security headers
-- **Morgan** - Request logging
-
-## 📱 Responsive Design
-
-- **Mobile First** - Optimized for all screen sizes
-- **Tablet Ready** - Perfect tablet experience
-- **Desktop Enhanced** - Full-featured desktop layout
-- **Touch Friendly** - Mobile gesture support
-
-## 🚀 Deployment
-
-### Vercel/Netlify (Frontend)
-```bash
-cd client
-npm run build
-# Deploy the client/dist folder
-```
-
-### Heroku (Full Stack)
-```bash
-git add .
-git commit -m "Deploy SkyScope Pro"
-git push heroku main
-```
-
-### Environment Variables for Production
-```env
-NODE_ENV=production
-WEATHER_API_KEY=your_production_api_key
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Developer
-
-**Y Mani Chandra Reddy**
-- Portfolio: [manichandrareddy.netlify.app](https://manichandrareddy.netlify.app/)
-- LinkedIn: [Y Mani Chandra Reddy](https://www.linkedin.com/in/y-mani-chandra-reddy)
-- Email: manichandra842@gmail.com
-
-## 🙏 Acknowledgments
-
-- [OpenWeatherMap](https://openweathermap.org/) - Weather data API
-- [React](https://reactjs.org/) - Frontend framework
-- [Lucide](https://lucide.dev/) - Beautiful icons
-- [Recharts](https://recharts.org/) - Data visualization
-
-## 📞 Support
-
-If you have any questions or run into issues:
-
-1. Check the [Issues](https://github.com/yourusername/skyscope-pro/issues) page
-2. Create a new issue with detailed information
-3. Contact via LinkedIn or portfolio site
+- **Node.js**: Server environment.
+- **Express.js**: Backend framework for routing.
+- **Axios**: HTTP client for API requests.
+- **Helmet**: Middleware to configure secure HTTP headers.
+- **Compression**: Gzip compression middleware to reduce response sizes.
+- **Morgan**: HTTP request logging middleware.
 
 ---
 
-<div align="center">
-  <p><strong>🌌 SkyScope Pro - Where Weather Intelligence Meets Beautiful Design</strong></p>
-  <p>Made with ❤️ by Y Mani Chandra Reddy | © 2024 SkyScope Pro</p>
-</div>
+## Directory Structure
+
+- [client](file:///home/mani/Desktop/Temp/Weather-App/client): React application files.
+  - [src/components](file:///home/mani/Desktop/Temp/Weather-App/client/src/components): Reusable user interface components.
+  - [src/services](file:///home/mani/Desktop/Temp/Weather-App/client/src/services): Frontend services including [WeatherService.js](file:///home/mani/Desktop/Temp/Weather-App/client/src/services/WeatherService.js) for backend communication.
+- [server](file:///home/mani/Desktop/Temp/Weather-App/server): Node.js Express server.
+  - [server.js](file:///home/mani/Desktop/Temp/Weather-App/server/server.js): Server configuration, routing, and integration with the OpenWeatherMap API.
+- [setup.sh](file:///home/mani/Desktop/Temp/Weather-App/setup.sh): Installation script for Linux/macOS systems.
+- [setup.bat](file:///home/mani/Desktop/Temp/Weather-App/setup.bat): Installation script for Windows systems.
+
+---
+
+## Quick Start
+
+### Prerequisites
+- Node.js version 16.0.0 or higher.
+- npm (Node Package Manager) or yarn.
+- An OpenWeatherMap API key (available from [openweathermap.org](https://openweathermap.org/api)).
+
+### Setup Steps
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Mani-Chandra65/Weather-App.git
+   cd Weather-App
+   ```
+
+2. Run the setup script to install all dependencies for both client and server:
+   - For Linux/macOS:
+     ```bash
+     chmod +x setup.sh
+     ./setup.sh
+     ```
+   - For Windows:
+     ```cmd
+     setup.bat
+     ```
+
+3. Configure environment variables. Create a `.env` file in the root directory:
+   ```env
+   NODE_ENV=development
+   PORT=5000
+   WEATHER_API_KEY=your_openweathermap_api_key_here
+   ```
+
+### Running the Application
+
+To run both the server and client concurrently in development mode, run:
+```bash
+npm run dev
+```
+
+Alternatively, you can run them individually:
+- Start backend server on `http://localhost:5000`:
+  ```bash
+  npm run server:dev
+  ```
+- Start frontend dev server on `http://localhost:5173`:
+  ```bash
+  npm run client:dev
+  ```
+
+### Production Build
+
+1. Build the frontend assets:
+   ```bash
+   npm run build
+   ```
+2. Start the production backend server:
+   ```bash
+   npm run start
+   ```
+
+---
+
+## API Documentation
+
+The backend service acts as a proxy for the OpenWeatherMap API.
+
+### Health Check
+- `GET /api/health`: Verifies the backend server status and API key validity.
+
+### Weather Data
+- `GET /api/weather/current/:city`: Returns current weather metrics for the specified city.
+- `GET /api/weather/coordinates/:lat/:lon`: Returns current weather metrics for the specified geographic coordinates.
+- `GET /api/weather/forecast/:city`: Returns 5-day forecast metrics (3-hour intervals) for the specified city.
+- `GET /api/weather/forecast/coordinates/:lat/:lon`: Returns 5-day forecast metrics for the specified coordinates.
+- `GET /api/weather/air-quality/:lat/:lon`: Returns air pollution and gas concentration metrics.
+
+### Location Services
+- `GET /api/geo/direct/:city`: Resolves city names to geographic coordinates.
+- `GET /api/geo/reverse/:lat/:lon`: Resolves geographic coordinates to city names.
+- `POST /api/weather/compare`: Expects a list of city names in the request body to retrieve compared metrics.
+
+---
+
+## Deployment
+
+### Frontend (Netlify / Vercel)
+The project includes a [netlify.toml](file:///home/mani/Desktop/Temp/Weather-App/netlify.toml) configuration file. Build command:
+```bash
+cd client && npm install && npm run build
+```
+Publish directory: `client/dist`
+
+### Backend (Render / Heroku)
+The project includes a [render.yaml](file:///home/mani/Desktop/Temp/Weather-App/render.yaml) file for one-click or automated deployment on Render.
+- Build Command: `cd server && npm install`
+- Start Command: `cd server && npm start`
+- Set the `WEATHER_API_KEY` environment variable in the dashboard.
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your modifications:
+   ```bash
+   git commit -m "Describe your changes"
+   ```
+4. Push to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a Pull Request.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Support and Contact
+
+For questions, issues, or feedback:
+- View open issues or report a bug on the repository issue tracker.
+- Contact the developer via email at manichandra842@gmail.com or via [LinkedIn](https://www.linkedin.com/in/y-mani-chandra-reddy).
